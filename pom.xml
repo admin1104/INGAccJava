@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.ing</groupId>
 	<artifactId>INGBankApp</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0-RELEASES</version>
 	<name>INGBankApp</name>
 	<description>ING Banking Application</description>
 
@@ -74,13 +74,10 @@
 	</dependencies>
 	<distributionManagement>
 		<repository>
-			<id>releases</id>
-			<url>http://13.232.4.79:8081/nexus/content/repositories/releases</url>
-		</repository>
-		<snapshotRepository>
-			<id>snapshots</id>
-			<url>http://13.232.4.79:8081/nexus/content/repositories/snapshots</url>
-		</snapshotRepository>
+    <id>1234</id>
+    <url>http://13.232.4.79:8081/nexus/content/repositories/1234</url>
+  </repository>
+
 	</distributionManagement>
 
 	<build>
