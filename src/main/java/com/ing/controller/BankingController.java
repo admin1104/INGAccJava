@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ing.dto.CustomerDto;
 import com.ing.dto.LoginDto;
 import com.ing.dto.LoginResponseDto;
 import com.ing.service.LoginService;
@@ -28,6 +29,16 @@ public class BankingController {
 		}else {
 			return ResponseEntity.badRequest().build();
 		}
+	}
+	@PostMapping("/createAccount")
+	public ResponseEntity<CustomerDto> createAccount(@RequestBody CustomerDto createAccount) {
+		return null;
+	}
+	
+	
+	@PostMapping("/updateUser")
+	public ResponseEntity<CustomerDto> updateUser(@RequestBody CustomerDto updateUser) {
+		return null;
 	}
 	
 }

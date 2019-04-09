@@ -1,11 +1,16 @@
 package com.ing.dto;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-public class CustomerDto {
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties
+public class CustomerDto implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private  Long customerId;
@@ -18,11 +23,10 @@ public class CustomerDto {
 	
 	public CustomerDto() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public CustomerDto(Long customerId, String customerName, String email,
-			Long mobile, Double balance, String pan) {
+			Long mobile, Double balance, String pan, String role) {
 		super();
 		this.customerId = customerId;
 		this.customerName = customerName;
