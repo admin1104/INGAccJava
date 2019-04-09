@@ -1,12 +1,14 @@
 package com.ing.dto;
 
+import java.math.BigInteger;
+
 public class CreateAccountDto {
 	
 	private String customerName;
 	
 	private String email;
 	
-	private long mobile;
+	private BigInteger mobile;
 	
 	private String pan;
 	
@@ -30,11 +32,11 @@ public class CreateAccountDto {
 		this.email = email;
 	}
 
-	public long getMobile() {
+	public BigInteger getMobile() {
 		return mobile;
 	}
 
-	public void setMobile(long mobile) {
+	public void setMobile(BigInteger mobile) {
 		this.mobile = mobile;
 	}
 

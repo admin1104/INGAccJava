@@ -1,6 +1,7 @@
 package com.ing.model;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,7 +26,7 @@ public class Customer implements Serializable{
 	private	String email;
 	
 	@Column(name="mobile")
-	private	Long	mobile;
+	private	BigInteger	mobile;
 	
 	@Column(name="balance")
 	private Double balance;
@@ -38,7 +39,7 @@ public class Customer implements Serializable{
 	private String role;
 	
 	public Customer(Long customerId, String customerName, String email,
-			Long mobile, Double balance, String pan) {
+			BigInteger mobile, Double balance, String pan) {
 		super();
 		this.customerId = customerId;
 		this.customerName = customerName;
@@ -68,10 +69,11 @@ public class Customer implements Serializable{
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Long getMobile() {
+
+	public BigInteger getMobile() {
 		return mobile;
 	}
-	public void setMobile(Long mobile) {
+	public void setMobile(BigInteger mobile) {
 		this.mobile = mobile;
 	}
 	public Double getBalance() {
