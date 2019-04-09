@@ -10,11 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ing.dto.CreateAccountDto;
-import com.ing.dto.CustomerDto;
 import com.ing.dto.LoginDto;
 import com.ing.dto.LoginResponseDto;
-import com.ing.repository.AccountRepository;
 import com.ing.service.CreateAccountService;
+import com.ing.service.CustomerService;
 import com.ing.service.LoginService;
 
 @RestController
@@ -28,6 +27,8 @@ public class BankingController {
 	@Autowired
 	public CreateAccountService createAccountService;
 
+	@Autowired
+	public CustomerService customerService;
 	
 	@PostMapping("/login")
 	public ResponseEntity<LoginResponseDto> processLogin(@RequestBody LoginDto loginRequest) {
@@ -44,8 +45,15 @@ public class BankingController {
 	}
 		
 	@PostMapping("/updateUser")
-	public ResponseEntity<CustomerDto> updateUser(@RequestBody CustomerDto updateUser) {
-		return null;
+	public ResponseEntity<String> updateUser(@RequestBody String email, Long mobile, Long customerId) {
+		String responseMessage = customerService.updateUser(email, mobile, customerId);
+		if (responseMessage != null) {
+			return ResponseEntity.ok().body(responseMessage);
+		} else {
+			return ResponseEntity.badRequest().body(responseMessage);
+		}
 	}
 	
 }
+
+	

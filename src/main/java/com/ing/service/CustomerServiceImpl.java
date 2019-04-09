@@ -1,7 +1,6 @@
 package com.ing.service;
 
-import java.util.Optional;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ing.dto.CustomerDto;
@@ -11,10 +10,11 @@ import com.ing.repository.CustomerRepository;
 @Service
 public class CustomerServiceImpl implements CustomerService{
 
+	@Autowired
 	CustomerRepository customerRepository;
+	
 	@Override
 	public String createAccount(CustomerDto customerDto) {
-		// TODO Auto-generated method stub
 		Customer customer = new Customer();
 		
 		
@@ -31,20 +31,18 @@ public class CustomerServiceImpl implements CustomerService{
 		return "successfully saved";
 	}
 	
-	public String updateUser(CustomerDto customerDto) {
-		Long customerId;
+	@Override
+	public String updateUser(String email, Long mobile, Long customerId) {
 		Customer getUser;
-		customerId=(Long)customerDto.getCustomerId();
-		
-		
-		getUser=customerRepository.findByCustomerId(customerId);
-		
-		
-		getUser.setEmail(customerDto.getEmail());
-		getUser.setMobile(customerDto.getMobile());
-		customerRepository.save(getUser);
-		
-		return null;
+		getUser=customerRepository.findById(customerId).orElse(null);
+		if(null != getUser) {
+			getUser.setEmail(email);
+			getUser.setMobile(mobile);
+			customerRepository.save(getUser);
+			
+			return "User details are updated successfully";
+		}
+		return "Unable to update user details";
 	}
 
 }
