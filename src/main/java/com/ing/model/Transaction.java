@@ -14,10 +14,7 @@ import javax.persistence.Table;
 @Table(name= "transaction")
 public class Transaction implements Serializable {
 	private static final long serialVersionUID = 1L;	
-	
-@Id
-@GeneratedValue(strategy= GenerationType.AUTO)
-private int id;
+
 
 @Id	
 @Column(name="transaction_id", nullable=false)	
@@ -111,11 +108,6 @@ public Date getTransactionDate() {
 public void setTransactionDate(Date transactionDate) {
 	this.transactionDate = transactionDate;
 }
-public int getId() {
-	return id;
-}
-public void setId(int id) {
-	this.id = id;
-}
+
 
 }
