@@ -6,5 +6,5 @@ public interface CustomerService {
 	
 	public String createAccount(CustomerDto customerDto);
 	
-	public String updateUser(CustomerDto customerDto);
+	public String updateUser(String email,Long mobile,Long customerId);
 }
