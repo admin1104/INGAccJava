@@ -1,5 +1,7 @@
 package com.ing.service;
 
+import java.math.BigInteger;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,7 +34,7 @@ public class CustomerServiceImpl implements CustomerService{
 	}
 	
 	@Override
-	public String updateUser(String email, Long mobile, Long customerId) {
+	public String updateUser(String email, BigInteger mobile, Long customerId) {
 		Customer getUser;
 		getUser=customerRepository.findById(customerId).orElse(null);
 		if(null != getUser) {
