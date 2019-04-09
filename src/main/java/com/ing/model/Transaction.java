@@ -13,6 +13,11 @@ import javax.persistence.Table;
 @Table(name= "transaction")
 public class Transaction {
 	
+	
+@Id
+@GeneratedValue(strategy= GenerationType.AUTO)
+private int id;
+
 @Id	
 @Column(name="transaction_id", nullable=false)	
 @GeneratedValue(strategy= GenerationType.AUTO)
@@ -104,6 +109,12 @@ public Date getTransactionDate() {
 }
 public void setTransactionDate(Date transactionDate) {
 	this.transactionDate = transactionDate;
+}
+public int getId() {
+	return id;
+}
+public void setId(int id) {
+	this.id = id;
 }
 
 }
