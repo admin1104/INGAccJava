@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @Table(name= "transaction")
 public class Transaction {
 	
-	
+@Id	
 @Column(name="transaction_id", nullable=false)	
 @GeneratedValue(strategy= GenerationType.AUTO)
 private long transactionID;
@@ -39,10 +39,6 @@ private String transactionStatus;
 private Date transactionDate;
 
 
-
-@Id
-@GeneratedValue(strategy= GenerationType.AUTO)
-private int id;
 public long getTransactionID() {
 	return transactionID;
 }
