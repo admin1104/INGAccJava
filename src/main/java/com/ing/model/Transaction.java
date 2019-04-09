@@ -31,9 +31,9 @@ private double transactionAmount;
 private long fromAccount;
 @Column(name="to_account", nullable=false)	
 private long toAccount;
-@Column(name="balance", nullable=false)	
+@Column(name="balance")	
 private long balance;
-@Column(name="transaction_status", nullable=false)	
+@Column(name="transaction_status")	
 private String transactionStatus;
 @Column(name="transaction_date", nullable=false)	
 private Date transactionDate;
