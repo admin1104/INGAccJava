@@ -31,7 +31,7 @@ public class BankControllerTest extends AbstractTest {
 	   }
 	
 	@Test
-	public void saveStockDetailsTest() throws Exception {
+	public void processLoginTests() throws Exception {
 	   String uri = "/api/v1/login";
 	   LoginDto login = new LoginDto();
 	   login.setUserName(123);
