@@ -24,6 +24,5 @@ public class DefaultExceptionHandler {
 	        request.getDescription(false));
 	    	return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
 		}*/
-	}
 
 }
