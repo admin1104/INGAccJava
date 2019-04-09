@@ -2,6 +2,8 @@ package com.ing.controller;
 
 
 
+import java.math.BigInteger;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -53,7 +55,7 @@ public class BankingController {
 	}
 		
 	@PostMapping("/updateUser")
-	public ResponseEntity<String> updateUser(@RequestBody String email, Long mobile, Long customerId) {
+	public ResponseEntity<String> updateUser(@RequestBody String email, BigInteger mobile, Long customerId) {
 		String responseMessage = customerService.updateUser(email, mobile, customerId);
 		if (responseMessage != null) {
 			return ResponseEntity.ok().body(responseMessage);
