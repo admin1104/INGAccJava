@@ -1,6 +1,7 @@
 package com.ing.dto;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
@@ -16,7 +17,7 @@ public class CustomerDto implements Serializable{
 	private  Long customerId;
 	private String customerName;
 	private	String email;
-	private	Long	mobile;
+	private	BigInteger mobile;
 	private Double balance;
 	private	String pan;
 	private String role;
@@ -26,7 +27,7 @@ public class CustomerDto implements Serializable{
 	}
 
 	public CustomerDto(Long customerId, String customerName, String email,
-			Long mobile, Double balance, String pan, String role) {
+			BigInteger mobile, Double balance, String pan, String role) {
 		super();
 		this.customerId = customerId;
 		this.customerName = customerName;
@@ -61,11 +62,11 @@ public class CustomerDto implements Serializable{
 		this.email = email;
 	}
 
-	public Long getMobile() {
+	public BigInteger getMobile() {
 		return mobile;
 	}
 
-	public void setMobile(Long mobile) {
+	public void setMobile(BigInteger mobile) {
 		this.mobile = mobile;
 	}
 
