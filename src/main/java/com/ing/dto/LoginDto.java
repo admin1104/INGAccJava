@@ -12,13 +12,13 @@ public class LoginDto implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private String userName;
+	private long userName;
 	private String password;
 	
-	public String getUserName() {
+	public long getUserName() {
 		return userName;
 	}
-	public void setUserName(String userName) {
+	public void setUserName(long userName) {
 		this.userName = userName;
 	}
 	public String getPassword() {

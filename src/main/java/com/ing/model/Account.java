@@ -12,6 +12,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 @Entity
 @Table(name="account")
 public class Account implements Serializable {
@@ -45,6 +47,7 @@ public class Account implements Serializable {
 	
 	@Column(name="created_date")
 	@Temporal(TemporalType.TIMESTAMP)
+	@CreationTimestamp 
 	private Date createdDate;
 
 	public long getAccountId() {

@@ -1,5 +1,7 @@
 package com.ing.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,12 +11,13 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="customer")
-public class Customer {
+public class Customer implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Id
 	@Column(name="customer_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private  Long customerId;
+	
 	@Column(name="customer_name")
 	private String customerName;
 	
@@ -46,7 +49,6 @@ public class Customer {
 	}
 	public Customer() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public Long getCustomerId() {
 		return customerId;
