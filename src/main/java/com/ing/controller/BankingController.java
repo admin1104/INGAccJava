@@ -8,9 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ing.dto.CreateAccountDto;
@@ -70,8 +72,14 @@ public class BankingController {
 		return ResponseEntity.ok().body(responseMessage);
 	}
 	
-	
-	
+	@GetMapping("/search")
+	public ResponseEntity<String> searchCriteria(@RequestParam long accountNo,
+			@RequestParam String customerName){
+		
+		createAccountService.searchCriteria(accountNo, customerName);
+		
+		return null;
+	}
 }
 
 	
