@@ -1,5 +1,7 @@
 package com.ing.service;
 
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 
 import com.ing.dto.CustomerDto;
@@ -30,10 +32,17 @@ public class CustomerServiceImpl implements CustomerService{
 	}
 	
 	public String updateUser(CustomerDto customerDto) {
-		Customer updateUser = new Customer();
-		updateUser.setEmail(customerDto.getEmail());
-		updateUser.setMobile(customerDto.getMobile());
+		Long customerId;
+		Customer getUser;
+		customerId=(Long)customerDto.getCustomerId();
 		
+		
+		getUser=customerRepository.findByCustomerId(customerId);
+		
+		
+		getUser.setEmail(customerDto.getEmail());
+		getUser.setMobile(customerDto.getMobile());
+		customerRepository.save(getUser);
 		
 		return null;
 	}
